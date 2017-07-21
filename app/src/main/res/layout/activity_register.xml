@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    style="@style/Layout"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/LayoutHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/register_content"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/text_register"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="@string/add_photo"
+        style="@style/FormInput"
+        android:background="@drawable/circle_input_file" />
+
+    <EditText
+        android:id="@+id/edit_name"
+        style="@style/FormInputEdit"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/signup_name" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        style="@style/FormInputEdit"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/email" />
+
+    <EditText
+        android:id="@+id/edit_phone"
+        style="@style/FormInputEdit"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/phone" />
+
+    <EditText
+        android:id="@+id/edit_password"
+        style="@style/FormInputEdit"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button_log_in"
+        style="@style/FormInputButton"
+        android:background="@drawable/rounded_button"
+        android:text="@string/register" />
+
+</LinearLayout>
