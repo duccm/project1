@@ -6,17 +6,22 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Layout">
+    <style name="EntryLayout">
         <item name="android:layout_centerInParent">true</item>
         <item name="android:paddingLeft">40dp</item>
         <item name="android:paddingRight">40dp</item>
+        <item name="android:background">@drawable/bg</item>
+        <item name="android:gravity">center</item>
     </style>
 
-    <style name="LayoutHeader">
+    <style name="EntryTextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="LayoutHeader" parent="EntryTextColor">
         <item name="android:layout_gravity">center</item>
         <item name="android:textSize">50sp</item>
     </style>
@@ -36,6 +41,88 @@
 
     <style name="FormInputEdit" parent="FormInput">
         <item name="android:textColorHint">@color/white</item>
+    </style>
+
+    <style name="PostItem">
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PostAvatar">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="PostNameTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="PostName">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PostTime">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PostStatus">
+        <item name="android:layout_below">@id/post_header</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="PostImage">
+        <item name="android:layout_below">@id/status</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="PostButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="PostButtonImage">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="PostButtonText">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MainAppLayout">
+        <item name="android:background">@color/facebook_light_blue</item>
     </style>
 
 </resources>

@@ -4,5 +4,12 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFF</color>
+    <color name="black">#000</color>
     <color name="green">#3CB371</color>
+    <color name="facebook_dark_blue">#274576</color>
+    <color name="facebook">#3b5998</color>
+    <color name="facebook_medium_blue">#4E69A2</color>
+    <color name="facebook_light_blue">#dfe3ee</color>
+    <color name="grey">#9196A3</color>
+
 </resources>
