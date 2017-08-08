@@ -15,4 +15,5 @@
     <string name="like">Like</string>
     <string name="comment">Comment</string>
     <string name="share">Share</string>
+    <string name="add_comment">Write a comment...</string>
 </resources>
