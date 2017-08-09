@@ -39,7 +39,7 @@ public class TabTimelineFragment extends Fragment {
     }
 
     private void PostData() {
-        Post post = new Post(0, "Chao buoi sang", "", "01/07/2017");
+        Post post = new Post(0, "Chao buoi sang", "https://westaway.co/wp-content/uploads/2015/12/4.jpg", "01/07/2017");
         postList.add(post);
 
         post = new Post(1, "Chao buoi chieu", "", "02/07/2017");

@@ -1,10 +1,12 @@
 package com.example.duccm.learningapp;
 
+import java.io.Serializable;
+
 /**
  * Created by DucCM on 7/25/2017.
  */
 
-public class Post {
+public class Post implements Serializable {
     private int user_id;
     private String status;
     private String image;
