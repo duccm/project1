@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +21,7 @@ import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
     private List<Post> postList;
-    private List<Profile> profileList = new ArrayList<>();
+    public List<Profile> profileList;
     private LayoutInflater inflater;
 
     public static final String POST_VALUES = "post_values";
@@ -85,7 +84,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     @Override
     public void onBindViewHolder(PostViewHolder holder, int position) {
-        ProfileData();
+
+        profileList = new ProfileList().getProfileList();
+
         Post post = postList.get(position);
 
         Glide.with(holder.itemView.getContext()).load(profileList.get(post.getUser_id()).getAvatar()).into(holder.avatar);
@@ -101,20 +102,4 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return postList == null ? 0 : postList.size();
     }
 
-    private void ProfileData() {
-        Profile profile = new Profile(0, "http://www.yhail.net/images/default-user-icon-profile.png", "AAAA", "a@a.a", "12121212", "12/12/12");
-        profileList.add(profile);
-
-        profile = new Profile(1, "", "BBBB", "b@b.b", "34343434", "34/34/34");
-        profileList.add(profile);
-
-        profile = new Profile(2, "", "CCCC", "c@c.c", "56565656", "56/56/56");
-        profileList.add(profile);
-
-        profile = new Profile(3, "", "DDDD", "d@d.d", "78787878", "78/78/78");
-        profileList.add(profile);
-
-        profile = new Profile(4, "", "EEEE", "e@e.e", "90909090", "90/90/90");
-        profileList.add(profile);
-    }
 }

@@ -9,11 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TabProfileFragment extends Fragment {
-    private Profile profile;
+    private Profile currentUser;
     private ImageView avatar;
     private TextView name;
     private TextView email;
@@ -42,18 +44,11 @@ public class TabProfileFragment extends Fragment {
     }
 
     public void setViews() {
-        profile = new Profile(
-                0,
-                "",
-                "DucCM",
-                "duccm@mail.com",
-                "0123456789",
-                "23/02/1994"
-        );
-        avatar.setBackgroundResource(R.drawable.ic_profile);
-        name.setText(profile.getName());
-        email.setText(profile.getEmail());
-        phone.setText(profile.getPhone());
-        birthday.setText(profile.getBirthday());
+        currentUser = new ProfileList().getProfileList().get(0);
+        Glide.with(this).load(currentUser.getAvatar()).into(avatar);
+        name.setText(currentUser.getName());
+        email.setText(currentUser.getEmail());
+        phone.setText(currentUser.getPhone());
+        birthday.setText(currentUser.getBirthday());
     }
 }

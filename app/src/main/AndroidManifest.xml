@@ -44,7 +44,7 @@
 
         <activity
             android:name=".CommentActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustNothing" />
     </application>
 
 </manifest>
