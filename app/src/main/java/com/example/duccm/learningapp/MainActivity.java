@@ -17,7 +17,7 @@ import static com.example.duccm.learningapp.PostAdapter.POST_VALUES;
  * Created by DucCM on 7/19/2017.
  */
 
-public class MainActivity extends AppCompatActivity implements PostStatusDialogFragment.OnPostButtonClickedListener {
+public class MainActivity extends AppCompatActivity implements PostStatusDialogFragment.OnPostButtonClickedListener, EditProfileDialogFragment.OnSubmitButtonClickedListener {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements PostStatusDialogF
             @Override
             public void onPageSelected(int position) {
                 invalidateOptionsMenu();
+                getSupportActionBar().setTitle(adapter.getPageTitle(position));
             }
 
             @Override
@@ -95,14 +96,14 @@ public class MainActivity extends AppCompatActivity implements PostStatusDialogF
 
     public void showDialog() {
         PostStatusDialogFragment dialog = new PostStatusDialogFragment();
-        dialog.show(getSupportFragmentManager(), "dialog");
+        dialog.show(getSupportFragmentManager(), "post_status_dialog");
 
     }
 
     @Override
-    public void passData(Post post) {
+    public void passPostData(Post post) {
         FragmentManager fm = this.getSupportFragmentManager();
-        Fragment dialogFragment = fm.findFragmentByTag("dialog");
+        Fragment dialogFragment = fm.findFragmentByTag("post_status_dialog");
         if (dialogFragment !=null && dialogFragment instanceof PostStatusDialogFragment) {
             PostStatusDialogFragment dialog = (PostStatusDialogFragment) dialogFragment;
             dialog.dismiss();
@@ -115,6 +116,23 @@ public class MainActivity extends AppCompatActivity implements PostStatusDialogF
         FragmentTransaction ft = fm.beginTransaction();
         ft.detach(timelineFragment);
         ft.attach(timelineFragment);
+        ft.commit();
+    }
+
+    @Override
+    public void passProfileData(Profile profile) {
+        FragmentManager fm = this.getSupportFragmentManager();
+        Fragment dialogFragment = fm.findFragmentByTag("edit_profile_dialog");
+        if (dialogFragment !=null && dialogFragment instanceof EditProfileDialogFragment) {
+            EditProfileDialogFragment dialog = (EditProfileDialogFragment) dialogFragment;
+            dialog.dismiss();
+        }
+        TabProfileFragment profileFragment =
+                (TabProfileFragment) adapter.getRegisteredFragment(viewPager.getCurrentItem());
+        profileFragment.setProfile(profile);
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.detach(profileFragment);
+        ft.attach(profileFragment);
         ft.commit();
     }
 }

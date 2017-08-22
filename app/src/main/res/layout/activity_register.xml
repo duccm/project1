@@ -31,7 +31,7 @@
         android:id="@+id/edit_name"
         style="@style/FormInputEdit"
         android:background="@drawable/rounded_edittext"
-        android:hint="@string/signup_name" />
+        android:hint="@string/name" />
 
     <EditText
         android:id="@+id/edit_email"
