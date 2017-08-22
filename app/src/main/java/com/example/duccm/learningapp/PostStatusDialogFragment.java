@@ -38,7 +38,7 @@ public class PostStatusDialogFragment extends DialogFragment implements View.OnC
     }
 
     public interface OnPostButtonClickedListener {
-        public void passData(Post post);
+        public void passPostData(Post post);
     }
 
     @Override
@@ -105,7 +105,7 @@ public class PostStatusDialogFragment extends DialogFragment implements View.OnC
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_cancel:
-                Fragment dialogFragment = getActivity().getSupportFragmentManager().findFragmentByTag("dialog");
+                Fragment dialogFragment = getActivity().getSupportFragmentManager().findFragmentByTag("post_status_dialog");
                 if (dialogFragment != null && dialogFragment instanceof PostStatusDialogFragment) {
                     PostStatusDialogFragment dialog = (PostStatusDialogFragment) dialogFragment;
                     dialog.dismiss();
@@ -114,7 +114,7 @@ public class PostStatusDialogFragment extends DialogFragment implements View.OnC
             case R.id.tv_post:
                 String date = DateTimeUtils.getFormatPostDateTime();
                 post = new Post(0, status.getText().toString(), "", date);
-                mCallback.passData(post);
+                mCallback.passPostData(post);
                 break;
         }
     }
