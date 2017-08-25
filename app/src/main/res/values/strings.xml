@@ -24,4 +24,7 @@
     <string name="update">Update</string>
     <string name="birthday">Birthday</string>
     <string name="update_avatar">Update Avatar</string>
+    <string name="login_success">Login Success</string>
+    <string name="wrong_credentials">Wrong login credentials</string>
+    <string name="wrong_credentials_format">Wrong email format or password length</string>
 </resources>
