@@ -32,17 +32,15 @@
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
-                <action android:name="com.example.duccm.learningapp.LoginActivity" />
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.example.duccm.learningapp.MainActivity" />
             </intent-filter>
         </activity>
 
@@ -51,8 +49,6 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="com.example.duccm.learningapp.RegisterActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
