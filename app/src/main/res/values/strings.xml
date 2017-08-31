@@ -27,4 +27,5 @@
     <string name="login_success">Login Success</string>
     <string name="wrong_credentials">Wrong login credentials</string>
     <string name="wrong_credentials_format">Wrong email format or password length</string>
+    <string name="get_timeline_failed">Cannot load timeline</string>
 </resources>

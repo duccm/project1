@@ -31,7 +31,7 @@ public class PostStatusDialogFragment extends DialogFragment implements View.OnC
     private EditText status;
     private TextView tvCancel;
     private TextView tvPost;
-    private OnPostButtonClickedListener mCallback;
+    private OnPostButtonClickedListener callback;
 
     public PostStatusDialogFragment() {
         // Required empty public constructor
@@ -46,7 +46,7 @@ public class PostStatusDialogFragment extends DialogFragment implements View.OnC
         super.onAttach(context);
 
         try {
-            mCallback = (OnPostButtonClickedListener) context;
+            callback = (OnPostButtonClickedListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement OnPostButtonClickedListener");
         }
@@ -112,9 +112,9 @@ public class PostStatusDialogFragment extends DialogFragment implements View.OnC
                 }
                 break;
             case R.id.tv_post:
-                String date = DateTimeUtils.getFormatPostDateTime();
-                post = new Post(0, status.getText().toString(), "", date);
-                mCallback.passPostData(post);
+                String createdAt = DateTimeUtils.getFormatPostDateTime();
+                post = new Post(new UserPost(0), status.getText().toString(), "", createdAt);
+                callback.passPostData(post);
                 break;
         }
     }

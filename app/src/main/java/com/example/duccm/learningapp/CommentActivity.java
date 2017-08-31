@@ -15,7 +15,7 @@ public class CommentActivity extends AppCompatActivity {
     private ImageView avatar;
     private ImageView image;
     private TextView status;
-    private TextView time;
+    private TextView createdAt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class CommentActivity extends AppCompatActivity {
         avatar = (ImageView) findViewById(R.id.avatar);
         image = (ImageView) findViewById(R.id.image);
         status = (TextView) findViewById(R.id.status);
-        time = (TextView) findViewById(R.id.time);
+        createdAt = (TextView) findViewById(R.id.created_at);
     }
 
     public void setViews() {
@@ -42,6 +42,6 @@ public class CommentActivity extends AppCompatActivity {
         Glide.with(this).load(post.getImage()).into(image);
         name.setText(profile.getName());
         status.setText(post.getStatus());
-        time.setText(post.getTime());
+        createdAt.setText(post.getCreatedAt());
     }
 }
