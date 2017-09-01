@@ -1,5 +1,7 @@
 package com.example.duccm.learningapp;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -7,27 +9,43 @@ import java.io.Serializable;
  */
 
 public class Post implements Serializable {
-    private int user_id;
-    private String status;
     private String image;
-    private String time;
+
+    @SerializedName("comment_cnt")
+    private Integer commentCnt;
+
+    @SerializedName("created_at")
+    private String createdAt;
+
+    @SerializedName("id")
+    private Integer id;
+
+    @SerializedName("like_cnt")
+    private Integer likeCnt;
+
+    @SerializedName("share_cnt")
+    private Integer shareCnt;
+
+    @SerializedName("status")
+    private String status;
+
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("updated_at")
+    private String updatedAt;
+
+    @SerializedName("user_post")
+    private UserPost userPost;
 
     public Post() {
     }
 
-    public Post(int user_id, String status, String image, String time) {
-        this.user_id = user_id;
+    public Post(UserPost userPost, String status, String image, String createdAt) {
+        this.userPost = userPost;
         this.status = status;
         this.image = image;
-        this.time = time;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+        this.createdAt = createdAt;
     }
 
     public String getStatus() {
@@ -38,6 +56,30 @@ public class Post implements Serializable {
         this.status = status;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public UserPost getUserPost() {
+        return userPost;
+    }
+
+    public void setUserPost(UserPost userPost) {
+        this.userPost = userPost;
+    }
+
     public String getImage() {
         return image;
     }
@@ -46,11 +88,43 @@ public class Post implements Serializable {
         this.image = image;
     }
 
-    public String getTime() {
-        return time;
+    public Integer getCommentCnt() {
+        return commentCnt;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setCommentCnt(Integer commentCnt) {
+        this.commentCnt = commentCnt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getLikeCnt() {
+        return likeCnt;
+    }
+
+    public void setLikeCnt(Integer likeCnt) {
+        this.likeCnt = likeCnt;
+    }
+
+    public Integer getShareCnt() {
+        return shareCnt;
+    }
+
+    public void setShareCnt(Integer shareCnt) {
+        this.shareCnt = shareCnt;
     }
 }
